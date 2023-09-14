@@ -1,6 +1,6 @@
 
 <template>
-  <details class="accordion-item">
+  <details class="accordion-item" :open="activeItem === index">
     <summary class="accordion-item__question active">
       {{ question }}
       <img
@@ -19,6 +19,8 @@ export default {
   props: {
     question: { type: String, required: true },
     answer: { type: String, required: true },
+    activeItem: { type: Number, required: true },
+    index: { type: Number, required: true },
   },
 };
 </script>
@@ -37,7 +39,7 @@ export default {
   color: var(--neut-blue-very-dark-grayish);
   letter-spacing: 0.01rem;
   cursor: pointer;
-  transition: margin 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .accordion-item__question:hover {
@@ -81,9 +83,6 @@ details[open] .accordion-item__answer {
 
   details[open] > .accordion-item__question {
     font-size: 1.4rem;
-  }
-
-  .accordion-item__answer {
   }
 }
 </style>

@@ -10,11 +10,13 @@
         <h1 class="accordion__title">FAQ</h1>
         <div class="accordion__questions">
           <AccordionItem
-            v-for="(accordion, index) in faqs"
+            @click.prevent="() => changeActiveItem(accordion.id)"
+            v-for="accordion in faqs"
             :question="accordion.question"
+            :activeItem="activeItem"
             :answer="accordion.answer"
+            :index="accordion.id"
             :key="accordion.id"
-            :open="index === 1"
           />
         </div>
       </div>
@@ -34,6 +36,7 @@ export default {
     AccordionItem,
   },
   setup() {
+    const activeItem = ref<number>(0);
     const faqs = ref<IFAQ[]>([
       {
         id: 1,
@@ -67,8 +70,18 @@ export default {
       },
     ]);
 
+    const changeActiveItem = (newValue: number) => {
+      if (activeItem.value === newValue) {
+        activeItem.value = 0;
+      } else {
+        activeItem.value = newValue;
+      }
+    };
+
     return {
       faqs,
+      activeItem,
+      changeActiveItem,
     };
   },
 };
