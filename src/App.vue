@@ -1,13 +1,13 @@
 <template>
-  <main><FaqAccordionCard /></main>
+  <main><AccordionCard /></main>
 </template>
 
 <script lang="ts">
-import FaqAccordionCard from './components/FaqAccordionCard.vue'
+import AccordionCard from './components/AccordionCard.vue'
 
 export default {
   components: {
-    FaqAccordionCard
+    AccordionCard
   },
   setup() {
     return {};

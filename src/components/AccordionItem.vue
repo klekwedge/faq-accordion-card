@@ -1,26 +1,28 @@
 
 <template>
-  <article class="faq">
-    <div class="faq__card">
-      <div class="faq__container">
-        <div class="faq__image" />
-        <div class="faq__shadow" />
-      </div>
-      <div class="faq__content">
-        <h1 class="faq__title">FAQ</h1>
-        <div class="faq-card__qa-container">
-        </div>
-      </div>
-    </div>
-  </article>
+  <div class="faq-card__questions-container">
+    <summary class="faq-card__question active">
+      {{ question }}
+      <img
+        class="faq-card__icon"
+        :src="iconArrowDown"
+        alt="click to reveal answer"
+      />
+    </summary>
+    <p class="faq-card__answer">{{ answer }}</p>
+  </div>
 </template>
-
-
-<script  lang="ts">
+  
+  
+  <script  lang="ts">
 import { ref } from "vue";
 
 export default {
-name: 'FaqAccordionCard',
+  name: "AccordionCard",
+  props: {
+    question: { type: String, required: true },
+    answer: { type: String, required: true },
+  },
   setup() {
     const faqs = ref([]);
 
@@ -30,8 +32,8 @@ name: 'FaqAccordionCard',
   },
 };
 </script>
-
-<style scoped>
+  
+  <style scoped>
 .faq {
   margin-top: 6.3rem;
 }
