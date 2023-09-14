@@ -1,19 +1,18 @@
 
 <template>
-  <details class="faq-card__questions-container">
-    <summary class="faq-card__question active">
+  <details class="accordion-item">
+    <summary class="accordion-item__question active">
       {{ question }}
       <img
-        class="faq-card__icon"
+        class="accordion-item__icon"
         src="../assets/images/icon-arrow-down.svg"
         alt="click to reveal answer"
       />
     </summary>
-    <p class="faq-card__answer">{{ answer }}</p>
+    <p class="accordion-item__answer">{{ answer }}</p>
   </details>
 </template>
-  
-  
+
 <script  lang="ts">
 export default {
   name: "AccordionItem",
@@ -25,11 +24,11 @@ export default {
 </script>
   
   <style scoped>
-.faq-card__questions-container {
+.accordion-item {
   border-bottom: 1px solid var(--dividers-blue-light-grayish);
   padding: 1.2rem 0;
 }
-.faq-card__question {
+.accordion-item__question {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,26 +40,26 @@ export default {
   transition: margin 0.5s ease;
 }
 
-.faq-card__question:hover {
+.accordion-item__question:hover {
   color: var(--pri-red-soft);
 }
 
-details[open] > .faq-card__question {
+details[open] > .accordion-item__question {
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: var(--pri-blue-very-dark-desaturated);
 }
 
-.faq-card__icon {
+.accordion-item__icon {
   width: 0.8rem;
   transition: all 0.3s;
 }
-details[open] .faq-card__icon {
+details[open] .accordion-item__icon {
   transform: rotate(180deg);
 }
 
-.faq-card__answer {
+.accordion-item__answer {
   color: var(--neut-blue-dark-grayish);
   width: 95%;
   opacity: 0;
@@ -69,22 +68,22 @@ details[open] .faq-card__icon {
   transition: all 3s ease;
 }
 
-details[open] .faq-card__answer {
+details[open] .accordion-item__answer {
   opacity: 1;
 }
 
 @media (min-width: 1440px) {
 
-  .faq-card__question {
+  .accordion-item__question {
     font-size: 1.4rem;
     padding-right: 1.7rem;
   }
 
-  details[open] > .faq-card__question {
+  details[open] > .accordion-item__question {
     font-size: 1.4rem;
   }
 
-  .faq-card__answer {
+  .accordion-item__answer {
   }
 }
 </style>

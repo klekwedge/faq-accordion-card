@@ -1,19 +1,19 @@
 
 <template>
-  <section class="faq">
-    <div class="faq__card">
-      <div class="faq__container">
-        <div class="faq__image" />
-        <div class="faq__shadow" />
+  <section class="accordion">
+    <div class="accordion__card">
+      <div class="accordion__container">
+        <div class="accordion__image" />
+        <div class="accordion__shadow" />
       </div>
-      <div class="faq__content">
-        <h1 class="faq__title">FAQ</h1>
-        <div class="faq__questions">
+      <div class="accordion__content">
+        <h1 class="accordion__title">FAQ</h1>
+        <div class="accordion__questions">
           <AccordionItem
-            v-for="(faq, index) in faqs"
-            :question="faq.question"
-            :answer="faq.answer"
-            :key="faq.id"
+            v-for="(accordion, index) in faqs"
+            :question="accordion.question"
+            :answer="accordion.answer"
+            :key="accordion.id"
             :open="index === 1"
           />
         </div>
@@ -75,10 +75,10 @@ export default {
 </script>
 
 <style scoped>
-.faq {
+.accordion {
   margin-top: 6.3rem;
 }
-.faq__card {
+.accordion__card {
   position: relative;
   width: 32.7rem;
   height: 53.5rem;
@@ -88,7 +88,7 @@ export default {
 
   box-shadow: 0 5rem 5rem -2rem rgba(53 18 122 / 0.497159);
 }
-.faq__container {
+.accordion__container {
   position: absolute;
   top: -10.8rem;
   left: 50%;
@@ -97,13 +97,13 @@ export default {
   height: auto;
 }
 
-.faq__image {
+.accordion__image {
   z-index: 5;
   height: 18rem;
   width: auto;
   background-image: url("./../assets/images/illustration-woman-online-mobile.svg");
 }
-.faq__image::after {
+.accordion__image::after {
   z-index: -1;
   content: "";
   position: absolute;
@@ -113,7 +113,7 @@ export default {
   width: 100%;
   box-shadow: 0 10rem 7rem 1rem rgba(53 18 122 / 0.497159);
 }
-.faq__shadow {
+.accordion__shadow {
   z-index: -1;
   position: absolute;
   top: 10.8rem;
@@ -126,7 +126,7 @@ export default {
   background-repeat: no-repeat;
 }
 
-.faq__title {
+.accordion__title {
   font-size: 3.2rem;
   text-align: center;
   font-weight: 700;
@@ -134,7 +134,7 @@ export default {
   margin-bottom: 1.9rem;
 }
 
-.faq__questions {
+.accordion__questions {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -142,12 +142,12 @@ export default {
 }
 
 @media (min-width: 1440px) {
-  .faq {
+  .accordion {
     position: relative;
     margin-top: 0;
   }
 
-  .faq__card {
+  .accordion__card {
     width: 92rem;
     height: 50.9rem;
     padding: 6.5rem 9.5rem 8.3rem 47.5rem;
@@ -155,7 +155,7 @@ export default {
     overflow: hidden;
   }
 
-  .faq::before {
+  .accordion::before {
     content: "";
     position: absolute;
     top: 20.3rem;
@@ -166,7 +166,7 @@ export default {
 
     background-image: url("./../assets/images/illustration-box-desktop.svg");
   }
-  .faq::after {
+  .accordion::after {
     content: "";
     position: absolute;
     top: 18rem;
@@ -176,20 +176,20 @@ export default {
     box-shadow: 0 12rem 3.5rem 0.5rem rgb(0 0 0);
   }
 
-  .faq__container {
+  .accordion__container {
     top: 48.7%;
     left: -6.7%;
     transform: translate(-10%, -50%);
   }
 
-  .faq__image {
+  .accordion__image {
     position: relative;
     height: 35.9rem;
     width: 47.2rem;
     background-image: url("./../assets/images/illustration-woman-online-desktop.svg");
   }
 
-  .faq__shadow {
+  .accordion__shadow {
     position: absolute;
     top: -36.5rem;
     left: -49.2rem;
@@ -199,7 +199,7 @@ export default {
     background-repeat: no-repeat;
   }
 
-  .faq__title {
+  .accordion__title {
     text-align: left;
   }
 }
