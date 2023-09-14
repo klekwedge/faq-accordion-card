@@ -8,7 +8,7 @@
       </div>
       <div class="faq__content">
         <h1 class="faq__title">FAQ</h1>
-        <div class="faq-card__qa-container">
+        <div class="faq__questions">
           <AccordionItem
             v-for="(faq, index) in faqs"
             :question="faq.question"
@@ -134,59 +134,11 @@ export default {
   margin-bottom: 1.9rem;
 }
 
-.faq-card__questions-container {
-  border-bottom: 1px solid var(--dividers-blue-light-grayish);
-  padding: 1.2rem 0;
-}
-
-.faq-card__qa-container {
+.faq__questions {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 29.5rem;
-}
-.faq-card__question {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 1.3rem;
-  line-height: 1.6;
-  color: var(--neut-blue-very-dark-grayish);
-  letter-spacing: 0.01rem;
-  cursor: pointer;
-  transition: margin 0.5s ease;
-}
-
-.faq-card__question:hover {
-  color: var(--pri-red-soft);
-}
-
-details[open] > .faq-card__question {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--pri-blue-very-dark-desaturated);
-}
-
-.faq-card__icon {
-  width: 0.8rem;
-  transition: all 0.3s;
-}
-details[open] .faq-card__icon {
-  transform: rotate(180deg);
-}
-
-.faq-card__answer {
-  color: var(--neut-blue-dark-grayish);
-  width: 95%;
-  opacity: 0;
-  line-height: 1.8;
-  letter-spacing: 0.004rem;
-  transition: all 3s ease;
-}
-
-details[open] .faq-card__answer {
-  opacity: 1;
 }
 
 @media (min-width: 1440px) {
@@ -249,21 +201,6 @@ details[open] .faq-card__answer {
 
   .faq__title {
     text-align: left;
-  }
-
-  .faq-card__questions-container {
-  }
-
-  .faq-card__question {
-    font-size: 1.4rem;
-    padding-right: 1.7rem;
-  }
-
-  details[open] > .faq-card__question {
-    font-size: 1.4rem;
-  }
-
-  .faq-card__answer {
   }
 }
 </style>
