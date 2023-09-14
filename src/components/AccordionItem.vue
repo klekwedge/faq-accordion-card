@@ -5,7 +5,7 @@
       {{ question }}
       <img
         class="faq-card__icon"
-        :src="iconArrowDown"
+        src="../assets/images/icon-arrow-down.svg"
         alt="click to reveal answer"
       />
     </summary>
@@ -14,21 +14,12 @@
 </template>
   
   
-  <script  lang="ts">
-import { ref } from "vue";
-
+<script  lang="ts">
 export default {
-  name: "AccordionCard",
+  name: "AccordionItem",
   props: {
     question: { type: String, required: true },
     answer: { type: String, required: true },
-  },
-  setup() {
-    const faqs = ref([]);
-
-    return {
-      faqs,
-    };
   },
 };
 </script>
